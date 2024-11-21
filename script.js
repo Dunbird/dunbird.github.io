@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Defines commands and their responses
     const commands = {
         help: "Available commands: <strong>about</strong>, <strong>writeups</strong>, <strong>contact</strong>, <strong>clear</strong>",
-        about: "Hello my name is Carlos, however my online alias is Dunbird. I am an aspiring Cyber Security professional with a passion of Digital Forensics! Here on my interactive portfolio you will find my basic information along with whatever projects I am currently working on. Feel free to reach out if you have any questions!",
+        about: "Hello, my name is Carlos, however my online alias is Dunbird. I am an aspiring Cyber Security professional with a passion of Digital Forensics! Here on my interactive portfolio you will find my basic information along with whatever projects I am currently working on. Feel free to reach out if you have any questions!",
         writeups: "Check out my CTF and Lab Writeups on <a href='https://github.com/Dunbird/CTF-Writeups' target='_blank'>Github</a>.",
         contact: `
         You can reach me via<br>
