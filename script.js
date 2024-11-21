@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (commands[command]) {
             if (command === 'clear') {
                 terminalContent.innerHTML = '';
-                return;
+                return null;
             }
             return commands[command];
         } else {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const moveInputBox = () => {
-        terminalContent.appendChild(document,querySelector('.input-box'));
+        terminalContent.appendChild(document.querySelector('.input-box'));
         terminalContent.scrollTop = terminalContent.scrollHeight;
     };
 
@@ -47,5 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
             moveInputBox();
         }
     });
+
     moveInputBox();
 });
