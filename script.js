@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Enter') {
             const userCommand = inputField.value.trim();
             if (userCommand) {
-                terminalContent.insertBefore(createOutput(`<span class="prompt">User@Portfolio:~$</span> ${userCommand}`), document.querySelector('.input-box'));
+                terminalContent.insertBefore(createOutput(`<span class="prompt">User@Portfolio:~$</span> ${userCommand}`), inputBox);
                 const response = handleCommand(userCommand);
                 if (response) {
-                    terminalContent.insertBefore(createOutput(response), document.querySelector('.input-box'));
+                    terminalContent.insertBefore(createOutput(response), inputBox);
                 }
             }
             inputField.value = '';
@@ -53,5 +53,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     moveInputBox();
-    inputBox.focus();
+    inputField.focus();
 });
