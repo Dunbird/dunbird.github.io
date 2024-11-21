@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handleCommand = (command) => {
         if (commands[command]) {
-            return commands[command];
+            return commands[command]();
         } else {
             return `Command not found: ${command}. Type <strong>help</strong> for a list of commands.`;
         }
