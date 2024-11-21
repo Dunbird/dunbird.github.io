@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
             content.forEach(p => {
                 p.remove();
             });
-            return null
         }
     };
 
