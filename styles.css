@@ -14,6 +14,15 @@ body {
     height: 100vh;
 }
 
+pre {
+    font-family: 'Source Code Pro', monospace;
+    color: #4DCA27;
+    white-space: pre-wrap;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
 .terminal {
     width: 90%;
     height: 90%;

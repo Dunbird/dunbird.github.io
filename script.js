@@ -3,10 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputField = document.getElementById('command-input');
     const inputBox = document.querySelector('.input-box');
 
+
     // Defines commands and their responses
     const commands = {
         help: "Available commands: <strong>about</strong>, <strong>projects</strong>, <strong>contact</strong>, <strong>clear</strong>",
-        about: "Temporary info",
+        about: "Hello my name is Carlos, however my online alias is Dunbird. I am an aspiring Cyber Security professional with a passion of Digital Forensics! Here on my interactive portfolio you will find my basic information along with whatever projects I am currently working on. Feel free to reach out if you have any questions!",
         projects: "Check out my projects on <a href='https://github.com/Dunbird' target='_blank'>GitHub</a>.",
         contact: "You can reach me via email: notdunbird@gmail.com",
         clear: () => {
