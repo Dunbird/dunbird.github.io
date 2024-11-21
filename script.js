@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const moveInputBox = () => {
         terminalContent.appendChild(document.querySelector('.input-box'));
         terminalContent.scrollTop = terminalContent.scrollHeight;
+        inputField.focus();
     };
 
     inputField.addEventListener('keypress', (e) => {
