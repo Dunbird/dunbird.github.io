@@ -73,9 +73,7 @@ body {
 .input-box {
     display: flex;
     align-items: center;
-    padding: 8px 16px;
-    background-color: #222;
-    border-top: 1px solid #444;
+    margin-top: 8px;
 }
 
 .prompt {
@@ -85,12 +83,13 @@ body {
 
 #command-input {
     flex: 1;
-    background: none;
+    background: transparent;
     border: none;
     color: #fff;
     font-size: 14px;
-    font-family: inherit;
+    font-family: 'Source Code Pro', monospace;
     outline: none;
+    caret-color: #0df;
 }
 
 @media (max-width: 768px){

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const contentDiv = document.getElementById('terminal-content');
+    const terminalContent = document.getElementById('terminal-content');
     const inputField = document.getElementById('command-input');
 
     const commands = {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleCommand = (command) => {
         if (commands[command]) {
             if (command === 'clear') {
-                contentDiv.innerHTML = '';
+                terminalContent.innerHTML = '';
                 return;
             }
             return commands[command];
@@ -22,16 +22,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const createOutput = (text) => {
+        const output = document.createElement('p');
+        output.innerHTML = text;
+        return output;
+    };
+
+    const moveInputBox = () => {
+        terminalContent.appendChild(document,querySelector('.input-box'));
+        terminalContent.scrollTop = terminalContent.scrollHeight;
+    };
+
     inputField.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             const userCommand = inputField.value.trim();
-            const response = handleCommand(userCommand);
-            contentDiv.innerHTML += `<p><span class="prompt">User@Portfolio:~$</span> ${userCommand}</p>`;
-            if (response) {
-                contentDiv.innerHTML += `<p>${response}</p>`;
+            if (userCommand) {
+                terminalContent.insertBefore(createOutput(`<span class="prompt">User@Portfolio:~$</span> ${userCommand}`), document.querySelector('.input-box'));
+                const response = handleCommand(userCommand);
+                if (response) {
+                    terminalContent.insertBefore(createOutput(response), document.querySelector('.input-box'));
+                }
             }
             inputField.value = '';
-            contentDiv.scrollTop = contentDiv.scrollHeight; // Auto-scroll to bottom
+            moveInputBox();
         }
     });
+    moveInputBox();
 });
