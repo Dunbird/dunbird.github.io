@@ -1,11 +1,3 @@
-@font-face {
-    font-family: 'Source Code Pro';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap);
-}
-
 html, body {
     margin: 0;
     padding: 0;
@@ -23,8 +15,8 @@ body {
 }
 
 .terminal {
-    width: 95%;
-    height: 95%;
+    width: 90%;
+    height: 90%;
     background-color: #1e1e1e;
     border-radius: 8px;
     display: flex;
@@ -83,19 +75,11 @@ body {
 
 #command-input {
     flex: 1;
-    background: transparent;
+    background-color: transparent;
     border: none;
     color: #fff;
     font-size: 14px;
     font-family: 'Source Code Pro', monospace;
     outline: none;
     caret-color: #0df;
-}
-
-@media (max-width: 768px){
-    .terminal {
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-    }
 }
