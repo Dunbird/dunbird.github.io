@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         about: "Hello my name is Carlos, however my online alias is Dunbird. I am an aspiring Cyber Security professional with a passion of Digital Forensics! Here on my interactive portfolio you will find my basic information along with whatever projects I am currently working on. Feel free to reach out if you have any questions!",
         writeups: "Check out my CTF and Lab Writeups on <a href='https://github.com/Dunbird/CTF-Writeups' target='_blank'>Github</a>.",
         contact: 
-        `You can reach me via 
-        Email: notdunbird@gmail.com \n
-        Linkedin:  <a href='https://www.linkedin.com/in/carlos-castaneda-b7a566242/' target='_blank'>LinkedIn</a> \n
+        `You can reach me via <br>
+        Email: notdunbird@gmail.com <br>
+        Linkedin:  <a href='https://www.linkedin.com/in/carlos-castaneda-b7a566242/' target='_blank'>LinkedIn</a> <br>
         Discord: dunbird.
         `,
         clear: () => {
