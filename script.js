@@ -3,54 +3,71 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputField = document.getElementById('command-input');
     const inputBox = document.querySelector('.input-box');
 
+    // Defines commands and their responses
     const commands = {
         help: "Available commands: <strong>about</strong>, <strong>projects</strong>, <strong>contact</strong>, <strong>clear</strong>",
-        about: "I am an aspiring cybersecurity specialist with a passion for digital forensics.",
-        writeups: "Check out my writeups on <a href='https://github.com/Dunbird/CTF-Writeups' target='_blank'>GitHub</a>.",
+        about: "Temporary info",
+        projects: "Check out my projects on <a href='https://github.com/Dunbird' target='_blank'>GitHub</a>.",
         contact: "You can reach me via email: notdunbird@gmail.com",
         clear: () => {
-            const content = terminalContent.querySelectorAll('p');
-            content.forEach(p => {
-                p.remove();
-            });
+            // Clears the terminal content 
+            terminalContent.querySelectorAll('p').forEach(p => p.remove());
+            return null; 
         }
     };
 
+    // Handle command input and return the appropriate response
     const handleCommand = (command) => {
         if (commands[command]) {
-            return commands[command]();
-        } else {
-            return `Command not found: ${command}. Type <strong>help</strong> for a list of commands.`;
+            const response = commands[command];
+            // If the command is a function (e.g., clear), execute it
+            if (typeof response === 'function') {
+                response();
+                return null; // Prevent any text output for the "clear" command
+            }
+            return response; // Return the response for other commands
         }
+        // Default message for unknown commands
+        return `Command not found: ${command}. Type <strong>help</strong> for a list of commands.`;
     };
 
+    // Create a new line of output in the terminal
     const createOutput = (text) => {
         const output = document.createElement('p');
         output.innerHTML = text;
         return output;
     };
 
+    // Ensure the input box stays at the bottom and auto-scrolls
     const moveInputBox = () => {
         terminalContent.appendChild(inputBox);
         terminalContent.scrollTop = terminalContent.scrollHeight;
     };
 
+    // Event listener for handling command input
     inputField.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             const userCommand = inputField.value.trim();
             if (userCommand) {
-                terminalContent.insertBefore(createOutput(`<span class="prompt">User@Portfolio:~$</span> ${userCommand}`), inputBox);
+                // Display the user's command
+                terminalContent.insertBefore(
+                    createOutput(`<span class="prompt">User@Portfolio:~$</span> ${userCommand}`),
+                    inputBox
+                );
+                // Get the response for the command
                 const response = handleCommand(userCommand);
                 if (response) {
+                    // Display the response (if any)
                     terminalContent.insertBefore(createOutput(response), inputBox);
                 }
             }
-            inputField.value = '';
+            inputField.value = ''; // Clear the input field
             moveInputBox();
-            inputField.focus();
+            inputField.focus(); // Focus on the input box
         }
     });
 
+    // Initial position of the input box
     moveInputBox();
-    inputField.focus();
+    inputField.focus(); // Automatically focus on the input box when the page loads
 });
